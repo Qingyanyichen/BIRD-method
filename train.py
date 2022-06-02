@@ -339,10 +339,10 @@ class AverageMeter(object):
         self.reset()
 
     def reset(self):
-        self.val = 0
-        self.avg = 0
-        self.sum = 0
-        self.count = 0
+        self.val = 0.0
+        self.avg = 0.0
+        self.sum = 0.0
+        self.count = 0.0
 
     def update(self, val, n=1):
         self.val = val
@@ -354,9 +354,9 @@ class AverageMeter(object):
 def adjust_learning_rate(optimizer, epoch):
     """Sets the learning rate to the initial LR decayed by 10 every 30 epochs"""
     if args.dataset.startswith('cifar'):
-        ###The [180,300,450] is for Pyramid200
+        ###The [180,300,450] is for Pyramid200 600 epoch
         ###lr = args.lr * (0.1 ** (epoch // (args.epochs * 0.3))) * (0.1 ** (epoch // (args.epochs * 0.5))) * (0.1 ** (epoch // (args.epochs * 0.75)))
-        ###The [180,200,300] is for ResNet50
+        ###The [180,200,300] is for ResNet50 400 epoch
         lr = args.lr * (0.1 ** (epoch // (args.epochs * 0.45))) * (0.1 ** (epoch // (args.epochs * 0.5))) * (0.1 ** (epoch // (args.epochs * 0.75)))
         ###lr = args.lr * (0.1 ** (epoch // (args.epochs * 0.45))) * (0.1 ** (epoch // (args.epochs * 0.75)))
     elif args.dataset == ('imagenet'):
