@@ -16,7 +16,6 @@ class BIRD(object):
         self.probability = probability
 
     def convert_image_to_bit_planes(self, img, bit_size):
-
         # split channels in a color (3-channel) image
         r, g, b = img.split()
     
@@ -28,7 +27,6 @@ class BIRD(object):
         return b_bits, g_bits, r_bits
 
     def convert_bit_planes_to_image(self, b_bits, g_bits, r_bits, img_size):
-
         # convert back to 8-bit integer in the original shape
         b_aug = np.packbits(b_bits).reshape(img_size)
         g_aug = np.packbits(g_bits).reshape(img_size)
@@ -40,19 +38,20 @@ class BIRD(object):
         return pil_img
 
     def bit_plane_slice(self, b_bits, g_bits, r_bits, bit_plane_list):
-
         if bit_plane_list is not None:
             for bit_plane in bit_plane_list:
                 logging.debug('Zeroizing {} bit_plane'.format(int(bit_plane)))
                 # zeroize the bit plane in each RGB channel
-                b_bits[:,:,int(bit_plane)] = 0
-                g_bits[:,:,int(bit_plane)] = 0
-                r_bits[:,:,int(bit_plane)] = 0
+                bgr = np.random.rand(1)
+                if bgr <= 1/3:
+                    b_bits[:,:,int(bit_plane)] = 0
+                elif bgr <= 2/3:
+                    g_bits[:,:,int(bit_plane)] = 0
+                else:
+                    r_bits[:,:,int(bit_plane)] = 0
     
     def __call__(self, img):
-    
         img2=copy.deepcopy(img)
-
         ###height, width, channels = img.shape
         height, width, channels = img.height,img.width,3
         img_size = (height, width)
