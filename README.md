@@ -1,5 +1,5 @@
 # BIRD-method
-This is the Pytorch implementation of our paper "Data Augmentation using Bitplane Information Recombination Model", IEEE Transactions on Image Processing, DOI :10.1109/TIP.2022.3175429.
+This is the Pytorch implementation of our paper "Data Augmentation using Bitplane Information Recombination Model", IEEE Transactions on Image Processing, DOI :10.1109/TIP.2022.3175429(https://ieeexplore.ieee.org/document/9779584).
 
 ----------
 Requirements  
@@ -12,7 +12,7 @@ Requirements
 ----------
 Train Examples
 ----------
-CIFAR-100: We used 1 GPUs to train CIFAR-100 as follows:
+CIFAR-100: We used 1 GPUs to train CIFAR-100 dataset as follows:
 ``` 
     python train.py \
     --net_type resnet \
@@ -39,10 +39,10 @@ CIFAR-100: We used 1 GPUs to train CIFAR-100 as follows:
     --beta 1.0 \
     --no-verbose
 ```
-For more details about the algorithm, please refer to our article.  
-If you have any questions, please contact Huan Zhang: zhanghuan19@mails.tsinghua.edu.cn
+For more details about the algorithm, please refer to our article (https://ieeexplore.ieee.org/document/9779584).  
+If you have any questions or suggestions, please contact Huan Zhang: zhanghuan19@mails.tsinghua.edu.cn
 
 ----------
 Citation
 ----------
-Huan Zhang, Zhiyi Xu, Xiaolin Han, and Weidong Sun. "Data Augmentation using  Bitplane Information Recombination Model", IEEE Transactions on Image Processing, DOI :10.1109/TIP.2022.3175429.
+H. Zhang, Z. Xu, X. Han and W. Sun, "Data Augmentation Using Bitplane Information Recombination Model," in IEEE Transactions on Image Processing, vol. 31, pp. 3713-3725, 2022, doi: 10.1109/TIP.2022.3175429.
