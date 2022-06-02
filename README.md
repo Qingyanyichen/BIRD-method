@@ -1,5 +1,5 @@
 # BIRD-method
-This is the Pytorch implementation of our paper "Data Augmentation using Bitplane Information Recombination Model", IEEE Transactions on Image Processing, DOI :10.1109/TIP.2022.3175429(https://ieeexplore.ieee.org/document/9779584).
+This is the Pytorch implementation of our paper "Data Augmentation using Bitplane Information Recombination Model", IEEE Transactions on Image Processing, DOI :10.1109/TIP.2022.3175429 (https://ieeexplore.ieee.org/document/9779584).
 
 ----------
 Requirements  
