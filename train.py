@@ -61,9 +61,6 @@ parser.add_argument('--expname', default='TEST', type=str,
                     help='name of experiment')
 parser.add_argument('--beta', default=0, type=float,
                     help='hyperparameter beta')
-parser.add_argument('--cutmix_prob', default=0.25, type=float,
-                    help='cutmix probability')
-
 parser.add_argument('--p', default=0.25, type=float, help='BIRD probability')
 
 parser.set_defaults(bottleneck=True)
