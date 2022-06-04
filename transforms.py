@@ -57,12 +57,12 @@ class BIRD(object):
         img_size = (height, width)
         bit_size = img_size + (8,)
         
-        tmp=str(random.randint(2, 7))
+        bit=[str(random.randint(2, 7))]
         r = np.random.rand(1)
         ###if r < self.probability:
         if r < 0.25:
             b_bits, g_bits, r_bits = self.convert_image_to_bit_planes(img2, bit_size)
-            self.bit_plane_slice(b_bits, g_bits, r_bits, [tmp])
+            self.bit_plane_slice(b_bits, g_bits, r_bits, bit)
             img_bit = self.convert_bit_planes_to_image(b_bits, g_bits, r_bits, img_size)
         
             img=img_bit
