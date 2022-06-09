@@ -19,7 +19,7 @@ CIFAR-100: We used 1 GPUs to train CIFAR-100 dataset as follows:
     --dataset cifar100 \
     --depth 50 \
     --batch_size 16 \
-    --lr 0.025 \
+    --lr 0.02 \
     --expname ResNet50 \
     --epochs 400 \
     --beta 1.0 \
