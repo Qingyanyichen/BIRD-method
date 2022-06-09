@@ -39,15 +39,15 @@ class BIRD(object):
 
     def bit_plane_slice(self, b_bits, g_bits, r_bits, bit_plane_list):
         if bit_plane_list is not None:
-            for bit_plane in bit_plane_list:
-                logging.debug('Zeroizing {} bit_plane'.format(int(bit_plane)))
-                # zeroize the bit plane in each RGB channel
-                bgr = np.random.rand(1)
-                if bgr <= 1/3:
+            rgb = np.random.rand(1)
+            if rgb <= 1/3:
+                for bit_plane in bit_plane_list:
                     b_bits[:,:,int(bit_plane)] = 0
-                elif bgr <= 2/3:
+            elif rgb <= 2/3:
+                for bit_plane in bit_plane_list:
                     g_bits[:,:,int(bit_plane)] = 0
-                else:
+            else:
+                for bit_plane in bit_plane_list:
                     r_bits[:,:,int(bit_plane)] = 0
     
     def __call__(self, img):
@@ -57,12 +57,26 @@ class BIRD(object):
         img_size = (height, width)
         bit_size = img_size + (8,)
         
-        bit=[str(random.randint(2, 7))]
+        ###bit7=[str(random.randint(2, 7))]
+        tmp1=random.randint(8, 13)
+        if tmp1==8:
+            bit5=['5','6','7']#[2,1,0]dropped,[7,6,5,4,3]extracted
+        elif tmp1==9:
+            bit5=['4','5','6']#[3,2,1]dropped,[7,6,5,4,0]extracted
+        elif tmp1==10:
+            bit5=['3','4','5']#[4,3,2]dropped,[7,6,5,1,0]extracted
+        elif tmp1==11:
+            bit5=['2','3','4']#[5,4,3]dropped,[7,6,2,1,0]extracted
+        elif tmp1==12:
+            bit5=['4','6','7']#[3,1,0]dropped,[7,6,5,4,2]extracted
+        elif tmp1==13:
+            bit5=['4','5','7']#[3,2,0]dropped,[7,6,5,4,1]extracted
+            
         r = np.random.rand(1)
         ###if r < self.probability:
         if r < 0.25:
             b_bits, g_bits, r_bits = self.convert_image_to_bit_planes(img2, bit_size)
-            self.bit_plane_slice(b_bits, g_bits, r_bits, bit)
+            self.bit_plane_slice(b_bits, g_bits, r_bits, bit5)
             img_bit = self.convert_bit_planes_to_image(b_bits, g_bits, r_bits, img_size)
         
             img=img_bit
