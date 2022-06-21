@@ -72,9 +72,9 @@ class BIRD(object):
         elif tmp1==13:
             bit5=['4','5','7']#[3,2,0]dropped,[7,6,5,4,1]extracted
         elif tmp1==14:
-            tmp2=['3','6','7']#[4,1,0]dropped,[7,6,5,3,2]extracted
+            bit5=['3','6','7']#[4,1,0]dropped,[7,6,5,3,2]extracted
         elif tmp1==15:
-            tmp2=['3','4','7']#[4,3,0]dropped,[7,6,5,2,1]extracted
+            bit5=['3','4','7']#[4,3,0]dropped,[7,6,5,2,1]extracted
             
         r = np.random.rand(1)
         ###if r < self.probability:
