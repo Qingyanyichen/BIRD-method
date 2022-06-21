@@ -58,7 +58,7 @@ class BIRD(object):
         bit_size = img_size + (8,)
         
         ###bit7=[str(random.randint(2, 7))]
-        tmp1=random.randint(8, 13)
+        tmp1=random.randint(8, 15)
         if tmp1==8:
             bit5=['5','6','7']#[2,1,0]dropped,[7,6,5,4,3]extracted
         elif tmp1==9:
@@ -71,6 +71,10 @@ class BIRD(object):
             bit5=['4','6','7']#[3,1,0]dropped,[7,6,5,4,2]extracted
         elif tmp1==13:
             bit5=['4','5','7']#[3,2,0]dropped,[7,6,5,4,1]extracted
+        elif tmp1==14:
+            tmp2=['3','6','7']#[4,1,0]dropped,[7,6,5,3,2]extracted
+        elif tmp1==15:
+            tmp2=['3','4','7']#[4,3,0]dropped,[7,6,5,2,1]extracted
             
         r = np.random.rand(1)
         ###if r < self.probability:
