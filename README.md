@@ -1,5 +1,7 @@
 # BIRD-method
-This is the Pytorch implementation of our paper "Data Augmentation using Bitplane Information Recombination Model", IEEE Transactions on Image Processing, DOI :10.1109/TIP.2022.3175429 (https://ieeexplore.ieee.org/document/9779584).
+This is the Pytorch implementation for the classification part of our paper "Data Augmentation using Bitplane Information Recombination Model", IEEE Transactions on Image Processing, DOI :10.1109/TIP.2022.3175429 (https://ieeexplore.ieee.org/document/9779584).
+
+For the detection part of our proposed BIRD data augmentation method, the newly POBIT data augmentation method (https://www.mdpi.com/2072-4292/16/24/4806) is developed based on this and will be released soon.
 
 ----------
 Requirements  
@@ -40,7 +42,8 @@ CIFAR-100: We used 1 GPUs to train CIFAR-100 dataset as follows:
     --no-verbose
 ```
 For more details about the algorithm, please refer to our article (https://ieeexplore.ieee.org/document/9779584).  
-If you have any questions or suggestions, please contact Huan Zhang: zhanghuan19@mails.tsinghua.edu.cn
+If you have any questions or suggestions, please contact Huan Zhang: zhanghuan19@mails.tsinghua.edu.cn          
+Recently, the email zhanghuan19@mails.tsinghua.edu.cn has been changed to zhanghuan19@tsinghua.org.cn
 
 ----------
 Citation
